@@ -2,7 +2,9 @@
   Convert <%= @first_symbol%>
 </h1>
 
-Go <a href= "/"> back.
+<p>
+  Go <a href= "/"> back</a>.
+</p>
 <% @currencies.keys.each do |second_symbol|%>
   <li> 
     <a href= "/<%= @first_symbol %>/<%= second_symbol %>">Convert 1 <%= @first_symbol %> to <%= second_symbol%>...</li>

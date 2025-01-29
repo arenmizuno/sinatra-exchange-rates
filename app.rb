@@ -25,7 +25,7 @@ end
 get("/:first_symbol/:second_symbol") do
   @first_symbol = params.fetch("first_symbol")
   @second_symbol = params.fetch("second_symbol")
-  @raw_response = HTTP.get("https://api.exchangerate.host/convert?from=#{first_symbol}&to=#{second_symbol}&amount=1&access_key=#{key}")
+  @raw_response = HTTP.get("https://api.exchangerate.host/convert?from=#{@first_symbol}&to=#{@second_symbol}&amount=1&access_key=#{key}")
   @string_response = @raw_response.to_s
   @parsed_response = JSON.parse(@string_response)
   @amount = @parsed_response.fetch("result")
